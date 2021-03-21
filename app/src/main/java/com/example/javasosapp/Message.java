@@ -36,7 +36,8 @@ Intent i;
         editData.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                i = new Intent(Message.this, OnClickEmerMsg.class);
+                startActivity(i);
             }
         });
     }
