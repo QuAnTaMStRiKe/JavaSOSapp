@@ -8,13 +8,13 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 
 public class Message extends AppCompatActivity {
 SharedPreferences pref;
 TextView editText5;
 Button backBtnMessage, editData;
+String message;
 Intent i;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +24,7 @@ Intent i;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_message);
         pref = getSharedPreferences("myKey", Context.MODE_PRIVATE);
-        String message = pref.getString("Message","");
+        message = pref.getString("Message", "");
         editText5.setText(message);
         backBtnMessage.setOnClickListener(new View.OnClickListener() {
             @Override

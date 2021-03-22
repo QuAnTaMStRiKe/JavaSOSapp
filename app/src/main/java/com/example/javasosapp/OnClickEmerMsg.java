@@ -31,9 +31,9 @@ Intent i;
                 message = editText.getText().toString();
                 pref = getApplicationContext().getSharedPreferences("myKey", Context.MODE_PRIVATE);
                 editor = pref.edit();
+                i = new Intent(OnClickEmerMsg.this,Message.class);
                 editor.putString("Message", message);
                 editor.apply();
-                 i = new Intent(OnClickEmerMsg.this,Message.class);
                 startActivity(i);
             }
         });
