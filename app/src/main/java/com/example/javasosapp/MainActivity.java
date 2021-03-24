@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     private final Integer SEND_SMS_CODE = 101;
     private final String TAG2 = "SMSPermission";
     private final Integer  SEND_LOCATION_CODE = 102;
+    double lat, lon;
     SharedPreferences pref;
     Button sosBtn, UserBtn;
     Intent i;
@@ -97,9 +98,9 @@ public class MainActivity extends AppCompatActivity {
                 GPStracker g = new GPStracker(MainActivity.this.getApplicationContext());
                 Location l = g.getLocation();
                 if(l != null){
-                    double lat = l.getLatitude();
-                    double lon = l.getLongitude();
-                    String location_message = "http://maps.google.com/maps?q=$lat,$lon";
+                    lat = l.getLatitude();
+                    lon = l.getLongitude();
+                    String location_message = "http://maps.google.com/maps?q="+lat+","+lon;
                     String number_1 = pref.getString("Number_1", "");
                     String number_2 = pref.getString("Number_2", "");
                     String number_3 = pref.getString("Number_3", "");
